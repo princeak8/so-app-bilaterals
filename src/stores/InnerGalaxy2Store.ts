@@ -5,13 +5,11 @@ import { type dataType, type sectionType, type stationType, type powerDropType }
 import { initializeStation, currentTime, getPower, getMvar, getVoltage } from "../helper";
 import { companyId } from "../enums"
 import { values, getAverage } from "../utilities";
-import { inStorage, storage } from "../localStorage";
 
-const storeId = companyId.AFL;
+const storeId = companyId.InnerGalaxy2;
 
-export const aflStore = defineStore(storeId, () => {
-    const afl = ref(initializeStation(companyId.AFL));
-    const storeId = companyId.AFL;
+export const innerGalaxy2Store = defineStore(storeId, () => {
+    const innerGalaxy2 = ref(initializeStation(companyId.InnerGalaxy2));
 
     const connected = ref(false);
     const connectionLost = ref(false);
@@ -29,7 +27,8 @@ export const aflStore = defineStore(storeId, () => {
     })
 
     function set (data: stationType) {
-        afl.value = {...data};
+        // console.log('InnerGalaxy2:', data);
+        innerGalaxy2.value = {...data};
         mw.value = getPower(data.sections, true);
         mx.value = getMvar(data.sections, true);
         kv.value = getVoltage(data.sections);
@@ -59,9 +58,7 @@ export const aflStore = defineStore(storeId, () => {
         }
     }
 
-    const company = computed(() => afl.value)
-    console.log("Afl company:", company.value);
-    console.log("ID:", company.value.id);
+    const company = computed(() => innerGalaxy2.value)
     const isConnected = computed(() => connected.value);
     const isConnectionLost = computed(() => connectionLost.value);
     const lastConnected = computed(() => lastConnectedTime.value);
@@ -75,7 +72,4 @@ export const aflStore = defineStore(storeId, () => {
             company, isConnected, isConnectionLost, lastConnected, powerDrop, vals, prevLoad,
             set, disconnected, connect, checkConnection
         }
-});
-
-
-
+})

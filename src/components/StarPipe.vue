@@ -14,6 +14,7 @@
   import { ref, computed, watch } from 'vue';
   import { storeToRefs } from 'pinia'
   import { starPipeStore } from '../stores/starPipeStore';
+  import { companyId } from "../enums"
   
       const companyStore = starPipeStore();
       const { company, isConnected, isConnectionLost, powerDrop, vals } = storeToRefs(companyStore)
@@ -39,7 +40,8 @@
         if(currentVals.mw != '' && currentVals.mw != '-') {
               prevLoad.value = currLoad.value;
               currLoad.value = currentVals.mw;
-              emits('emitTotal', company.value.id, currentVals.mw);
+              let id = company.value?.id ? company.value.id : company.value.name;
+              emits('emitTotal', id, currentVals.mw);
         }
         // if(powerDrop.value.status) emits('startAlarm');
       })

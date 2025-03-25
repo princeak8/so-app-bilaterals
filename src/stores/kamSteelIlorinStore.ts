@@ -7,11 +7,10 @@ import { companyId } from "../enums"
 import { values, getAverage } from "../utilities";
 import { inStorage, storage } from "../localStorage";
 
-const storeId = companyId.AFL;
+const storeId = companyId.KamSteelIlorin;
 
-export const aflStore = defineStore(storeId, () => {
-    const afl = ref(initializeStation(companyId.AFL));
-    const storeId = companyId.AFL;
+export const kamSteelIlorinStore = defineStore(storeId, () => {
+    const kamSteel = ref(initializeStation(companyId.KamSteelIlorin));
 
     const connected = ref(false);
     const connectionLost = ref(false);
@@ -29,10 +28,13 @@ export const aflStore = defineStore(storeId, () => {
     })
 
     function set (data: stationType) {
-        afl.value = {...data};
+        kamSteel.value = {...data};
+        // console.log(data.sections);
+        kv.value = getVoltage(data.sections);
         mw.value = getPower(data.sections, true);
         mx.value = getMvar(data.sections, true);
-        kv.value = getVoltage(data.sections);
+
+        // console.log('volt', kv.value);
 
         prevPower.value = currPower.value;
         currPower.value = mw.value.pwr;
@@ -59,9 +61,7 @@ export const aflStore = defineStore(storeId, () => {
         }
     }
 
-    const company = computed(() => afl.value)
-    console.log("Afl company:", company.value);
-    console.log("ID:", company.value.id);
+    const company = computed(() => kamSteel.value)
     const isConnected = computed(() => connected.value);
     const isConnectionLost = computed(() => connectionLost.value);
     const lastConnected = computed(() => lastConnectedTime.value);
@@ -75,7 +75,4 @@ export const aflStore = defineStore(storeId, () => {
             company, isConnected, isConnectionLost, lastConnected, powerDrop, vals, prevLoad,
             set, disconnected, connect, checkConnection
         }
-});
-
-
-
+})

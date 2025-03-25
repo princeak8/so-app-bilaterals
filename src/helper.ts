@@ -20,7 +20,9 @@ export const initializeStation = (name: string): stationType => {
               mw: '',
               A: '',
               V: '',
-              mvar: ''
+              v: '',
+              mvar: '',
+              mx: ''
             }
           },
         ]
@@ -55,7 +57,7 @@ export const getMvar = (sections: sectionType[], absolute=false): mvarValObjType
     let pwr = 0;
     let status = false;
     sections.forEach((section) => {
-        let mx = parseFloat(section.data.mvar.toString());
+        let mx = section.data?.mx ? parseFloat(section.data.mx.toString()) : parseFloat(section.data.mvar.toString());
         if(!Number.isNaN(mx)) {
             status = true;
             if(absolute) {
@@ -73,7 +75,9 @@ export const getVoltage = (sections: sectionType[]): voltageValObjType => {
     let status = false;
     let voltage = 0;
     sections.forEach((section) => {
-        let v = parseFloat(section.data.V.toString());
+
+        let v = section.data?.V ? parseFloat(section.data.V.toString()) : parseFloat(section.data?.v.toString());
+        // console.log("voltage:", v);
         if(!Number.isNaN(v)) {
             status = true;
             voltage = (v > voltage) ? v : voltage

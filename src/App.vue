@@ -31,7 +31,8 @@ import { ref, watch, onBeforeMount, onMounted } from 'vue';
       ws.onmessage = async (msg) => {
           try{
               const fMsg = JSON.parse(msg.data);
-              // if(fMsg.id=='odukpaniNippPs') console.log('fmsg:', fMsg);
+              // if(fMsg.name=='Gazaoua') console.log('fmsg:', fMsg);
+              // console.log('fmsg:', fMsg);
               connected.value = true;
               if(fMsg.id && fMsg.nc) {
                 let ncStation = stationStore(fMsg.id);
@@ -39,7 +40,7 @@ import { ref, watch, onBeforeMount, onMounted } from 'vue';
               }
               if(fMsg != null) {
                   // if(formattedData?.id=='dadinKowaGs') console.log('formatted data', formattedData);
-                  const station = stationStore(fMsg.id);
+                  const station = fMsg?.id ? stationStore(fMsg.id) : stationStore(fMsg.name);
                   // if(formattedData?.id=='dadinKowaGs') console.log('dadinkowa station', station);
                   
                   if(station != undefined) {

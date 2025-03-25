@@ -27,10 +27,11 @@ export const quantumStore = defineStore(storeId, () => {
     })
 
     function set (data: stationType) {
+        // console.log('quantum:', data);
         quantum.value = {...data};
-        mw.value = getPower(data.sections, true);
-        mx.value = getMvar(data.sections, true);
         kv.value = getVoltage(data.sections);
+        mx.value = getMvar(data.sections, true);
+        mw.value = getPower(data.sections, true);
 
         prevPower.value = currPower.value;
         currPower.value = mw.value.pwr;

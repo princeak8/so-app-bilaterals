@@ -2,7 +2,9 @@ export interface dataType {
     mw: number | string;
     A: number | string;
     V: number | string;
+    v?: number | string;
     mvar: number | string;
+    mx: number | string;
 }
 
 export interface sectionType {
@@ -18,6 +20,7 @@ export interface processingStationType {
 
 export interface stationType {
     id: string;
+    name?: string;
     t: string;
     sections: sectionType[]
 }

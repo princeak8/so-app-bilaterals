@@ -1,7 +1,7 @@
 <template>
     <tr :class="{redBg: powerDrop.status}">
       <td style="padding-left: 5px;">{{ sn }}</td>
-      <td class="center">Kam Steel</td>
+      <td class="center">Kam Steel Sagamu</td>
       <td class="center">{{ vals.mw }}</td>
       <td class="center"> {{ vals.mx}} </td>
       <td class="center"> {{ vals.kv }} </td>
@@ -14,6 +14,7 @@
   import { ref, computed, watch } from 'vue';
   import { storeToRefs } from 'pinia'
   import { kamSteelStore } from '../stores/kamSteelStore';
+  import { companyId } from "../enums"
   
       const companyStore = kamSteelStore();
       const { company, isConnected, isConnectionLost, powerDrop, vals } = storeToRefs(companyStore)
@@ -39,7 +40,8 @@
         if(currentVals.mw != '' && currentVals.mw != '-') {
               prevLoad.value = currLoad.value;
               currLoad.value = currentVals.mw;
-              emits('emitTotal', company.value.id, currentVals.mw);
+              let id = company.value?.id ? company.value.id : company.value.name;
+              emits('emitTotal', id, currentVals.mw);
         }
         // if(powerDrop.value.status) emits('startAlarm');
       })

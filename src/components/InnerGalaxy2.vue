@@ -1,7 +1,7 @@
 <template>
     <tr :class="{redBg: powerDrop.status}">
       <td style="padding-left: 5px;">{{ sn }}</td>
-      <td class="center">PulkitSteel</td>
+      <td class="center">Inner Galaxy 2</td>
       <td class="center">{{ vals.mw }}</td>
       <td class="center"> {{ vals.mx}} </td>
       <td class="center"> {{ vals.kv }} </td>
@@ -13,10 +13,10 @@
   
   import { ref, computed, watch } from 'vue';
   import { storeToRefs } from 'pinia'
-  import { pulkitSteelStore } from '../stores/pulkitSteelStore';
+  import { innerGalaxy2Store } from '../stores/InnerGalaxy2Store';
   import { companyId } from "../enums"
   
-      const companyStore = pulkitSteelStore();
+      const companyStore = innerGalaxy2Store();
       const { company, isConnected, isConnectionLost, powerDrop, vals } = storeToRefs(companyStore)
       const currLoad = ref();
       const prevLoad = ref();

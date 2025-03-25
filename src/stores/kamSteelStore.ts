@@ -28,6 +28,7 @@ export const kamSteelStore = defineStore(storeId, () => {
     })
 
     function set (data: stationType) {
+        // console.log('kamsteel:', data);
         kamSteel.value = {...data};
         mw.value = getPower(data.sections, true);
         mx.value = getMvar(data.sections, true);

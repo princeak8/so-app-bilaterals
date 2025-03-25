@@ -22,9 +22,23 @@
             <tbody>
                 <!-- <component :is="AfamIV" :sn="1" @emitTotal="getStationTotal" />
                 <component :is="AfamV" :sn="2" @emitTotal="getStationTotal" /> -->
-                <component v-for="(company, n) in companyComponents" :is="company" :sn="n+1" 
+
+                <!-- <component v-for="(company, n) in companyComponents" :is="company" :sn="n+1" 
                     @emitTotal="getCompanyTotal" @resetTotal="resetCompanyTotal" 
+                /> -->
+                <!-- <Taopex 
+                    :companies="companyComponents.taopex" 
+                    @emitTotal="getCompanyTotal" 
+                    @resetTotal="resetCompanyTotal" 
+                /> -->
+                <Group
+                    v-for="companyGroup in companyComponents"
+                    :name="companyGroup.name"
+                    :companies="companyGroup.companies" 
+                    @emitTotal="getCompanyTotal" 
+                    @resetTotal="resetCompanyTotal" 
                 />
+
                 Total: {{ total.toLocaleString('en-US') }}MW
             </tbody>
         </table>
@@ -35,6 +49,11 @@
 <script setup lang="ts">
     import { ref, computed } from 'vue';
     import companyComponents from "../companyComponents";
+    import Group from './Group.vue';
+    import Taopex from './Taopex.vue';
+    import Mesl from './Mesl.vue';
+    import Ndphc from './Ndphc.vue';
+    import Fipl from './Fipl.vue';
     import axios from "axios";
     import { inStorage, storage, putInStorage } from "../localStorage";
 
@@ -49,6 +68,7 @@
         // console.log('id: ', id);
         // console.log('total', total);
         companiesTotal.value[id] = total;
+        // console.log("companies total:", companiesTotal.value);
     }
 
     const resetCompanyTotal = (id: string) => {
