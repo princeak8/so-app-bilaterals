@@ -1,14 +1,34 @@
 export enum companyId {
     AFL = 'africanFoundriesLimited',
-    KamSteel = 'kamSteel',
     Larfarge = 'larfarge',
     Monarch = 'monarch',
-    Pheonix = 'pheonix',
-    PulkitSteel = 'pulkitSteel',
-    Quantum = 'quantum',
     StarPipe = 'starPipe',
+    TopSteel = 'topSteel',
+
+    //NDPHC
+    PulkitSteel = 'pulkitSteel',
     Sunflag = 'sunflag',
-    TopSteel = 'topSteel'
+    Pheonix = 'pheonix',
+
+    // TAOPEX
+    KamSteelIlorin = 'kamSteel-Ilorin',
+    ErKang = 'Er-Kang',
+    KamSteel = 'kamSteel',
+
+    //MESL
+    Quantum = 'quantum',
+    Gazaoua = 'Gazaoua',
+    InnerGalaxy1 = 'Inner_Galaxy1',
+    InnerGalaxy2 = 'Inner_Galaxy2',
+    ATVL = 'ATVL',
+    PSML = 'PSML',
+    Zeberced = 'zeberced',
+    Niamey = 'Niamey',
+    KamInd33 = 'KamInd33kV',
+
+    //FIPL
+    OAU_Ife = 'Obafemi Awolowo University Ile-Ife',
+    FMPIA = 'First Maximum Point Industries Akure',
 }
 
 export enum settings {
