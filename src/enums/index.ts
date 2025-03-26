@@ -8,7 +8,7 @@ export enum companyId {
     //NDPHC
     PulkitSteel = 'pulkitSteel',
     Sunflag = 'sunflag',
-    Pheonix = 'pheonix',
+    Pheonix = 'phoenix',
 
     // TAOPEX
     KamSteelIlorin = 'kamSteel-Ilorin',
