@@ -22,6 +22,7 @@ import { kamInd33Store } from "./kamInd33Store";
 import { erKangStore } from "./erKangStore";
 import { oauIfeStore } from "./oauIfeStore";
 import { fmpiaStore } from "./fmpiaStore";
+import { ikejaWestSakateStore } from "./ikejaWestSakateStore";
 
 const stores = () => {
     return {
@@ -46,7 +47,8 @@ const stores = () => {
         [companyId.KamInd33] : kamInd33Store(),
         [companyId.ErKang] : erKangStore(),
         [companyId.OAU_Ife] : oauIfeStore(),
-        [companyId.FMPIA] : fmpiaStore()
+        [companyId.FMPIA] : fmpiaStore(),
+        [companyId.IkejaWestSakate] : ikejaWestSakateStore()
     };
 };
 

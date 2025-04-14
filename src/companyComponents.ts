@@ -4,6 +4,7 @@ import Larfarge from "./components/Larfarge.vue";
 import Monarch from "./components/Monarch.vue";
 import StarPipe from "./components/StarPipe.vue";
 import TopSteel from "./components/TopSteel.vue";
+import IkejaWestSakate from "./components/IkejaWestSakate.vue";
 
  //NDPHC
  import PulkitSteel from "./components/PulkitSteel.vue";
@@ -49,7 +50,7 @@ export default [
         },
         {
                 name: "Others",
-                companies: [Afl, Larfarge, Monarch, StarPipe, TopSteel]
+                companies: [Afl, Larfarge, Monarch, StarPipe, TopSteel, IkejaWestSakate]
         },
 ];
 

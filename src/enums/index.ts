@@ -4,6 +4,7 @@ export enum companyId {
     Monarch = 'monarch',
     StarPipe = 'starPipe',
     TopSteel = 'topSteel',
+    IkejaWestSakate = 'ikejaWest-sakate',
 
     //NDPHC
     PulkitSteel = 'pulkitSteel',

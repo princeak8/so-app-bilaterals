@@ -38,8 +38,9 @@
                     @emitTotal="getCompanyTotal" 
                     @resetTotal="resetCompanyTotal" 
                 />
-
-                Total: {{ total.toLocaleString('en-US') }}MW
+                <div style="margin-top: 20px; font-weight: bold;">
+                    Total: {{ total.toLocaleString('en-US') }}MW
+                </div>
             </tbody>
         </table>
     </div>
