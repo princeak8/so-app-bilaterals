@@ -26,6 +26,8 @@ import Psml from "./components/Psml.vue";
 import Zeberced from "./components/Zeberced.vue";
 import Niamey from "./components/Niamey.vue";
 import KamInd33 from "./components/KamInd33.vue";
+import Amil from "./components/Amil.vue";
+import Aenl from "./components/Aenl.vue";
 
 //FIPL
 import OauIfe from "./components/OauIfe.vue";
@@ -42,7 +44,7 @@ export default [
         },
         {
                 name: "MAIN STREAM",
-                companies: [Quantum, Gazaoua, InnerGalaxy1, InnerGalaxy2, Atvl, Psml, Zeberced, Niamey, KamInd33]
+                companies: [Quantum, Gazaoua, InnerGalaxy1, InnerGalaxy2, Atvl, Psml, Zeberced, Niamey, KamInd33, Amil, Aenl]
         },
         {
                 name: "FIPL",

@@ -26,6 +26,8 @@ export enum companyId {
     Zeberced = 'zeberced',
     Niamey = 'Niamey',
     KamInd33 = 'KamInd33kV',
+    AENL = 'aenl',
+    AMIL = 'amil',
 
     //FIPL
     OAU_Ife = 'Obafemi Awolowo University Ile-Ife',

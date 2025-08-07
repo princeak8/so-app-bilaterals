@@ -23,6 +23,8 @@ import { erKangStore } from "./erKangStore";
 import { oauIfeStore } from "./oauIfeStore";
 import { fmpiaStore } from "./fmpiaStore";
 import { ikejaWestSakateStore } from "./ikejaWestSakateStore";
+import { amilStore } from "./amilStore";
+import { aenlStore } from "./aenlStore";
 
 const stores = () => {
     return {
@@ -48,7 +50,9 @@ const stores = () => {
         [companyId.ErKang] : erKangStore(),
         [companyId.OAU_Ife] : oauIfeStore(),
         [companyId.FMPIA] : fmpiaStore(),
-        [companyId.IkejaWestSakate] : ikejaWestSakateStore()
+        [companyId.IkejaWestSakate] : ikejaWestSakateStore(),
+        [companyId.AMIL] : amilStore(),
+        [companyId.AENL] : aenlStore()
     };
 };
 
